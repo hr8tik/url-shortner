@@ -5,17 +5,182 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"/>
+  <style>
+    :root {  
+      --clr-primary: #ee6352;
+      --clr-secondary: #d16e8d;
+      --clr-accent: #F7F7FF;
+      --clr-gradient: linear-gradient(-90deg, var(--clr-primary), var(--clr-secondary));
+      --ff-title: bungee, sans-serif;
+      --ff-body: canada-type-gibson,sans-serif;
+      --fw-body: 300;
+      --fw-bold: 800;
+      --fw-title: 400;
+      --fw-number: 800;
+    }
+
+    body {
+      font-family: var(--ff-body);
+      font-weight: var(--fw-body);
+      font-size: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+    }
+
+    .title{
+      text-align: center;
+      text-transform: uppercase;
+      padding: 1em 0 2em;
+      margin: 0;
+      background: var(--clr-gradient);
+      position: relative;
+      z-index: 1000;
+    }
+
+    .title {
+      font-size: calc(1rem + 3vw);
+      font-family: var(--ff-title);
+      font-weight: var(--fw-title);
+      color: white;
+      text-shadow: 3px 5px 10px rgba(0,0,0, .2);
+      clip-path: polygon(0 0, 100% 0%, 100% 60%, 0% 100%);
+    }
+
+    .conform{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 2rem 0 1rem 24rem;
+    }
+    #fullUrl{
+      align-self: center;
+      width: 45rem;
+      height: 2.5rem;
+      font-size: 1.5rem;
+    }
+    .btn{
+      width: 5rem;
+      height: 2.8rem;
+      margin-left: 1.5rem;
+      color: honeydew;
+      font-size: 1rem;
+      font-weight: 550;
+      background-color: rgb(39, 165, 39);
+      border-radius: 10%;
+    }
+
+    .table{
+      margin-top: 2rem;
+      width: 85%;
+      margin-left: 8rem;
+      margin-bottom: 5rem;
+      border: 1px solid black;
+    }
+    td{
+      padding-left: 1rem;
+    }
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    }
+
+  footer{
+    padding: 0rem 0;
+    width: 100%;
+    background: linear-gradient(90deg, var(--clr-primary), var(--clr-secondary));
+    clip-path: polygon(0 0, 100% 18%, 100% 100%, 0% 100%);
+    color: #fff;
+  }
+  
+  .footer-container{
+    margin: 0 auto;
+    max-width: 100rem;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .footer-about{
+    margin: 1rem 0;
+    width: 65%;
+  }
+  
+  .footer-about-text{
+    margin: 1rem 0;
+  }
+  
+  .footer-links{
+    margin: 1rem 0;
+    width: 30%;
+  }
+  
+  .footer-links-ul{
+    margin: 1rem 0;
+    list-style: none;
+  }
+  
+  .footer-links-li{
+    margin: 0.5rem;
+  }
+  
+  .footer-links-a{
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-links-a:hover{
+    color: goldenrod;
+  }
+  
+  .footer-copyrights{
+    margin: 1rem 0;
+    width: 70%;
+  }
+  
+  .footer-social-links{
+    margin: 1rem 0;
+    width: 30%;
+    display: flex;
+  }
+  
+  .footer-social-links .social-a{
+    margin-right: 1rem; 
+    color: #fff;
+  }
+  
+  .footer-btn{
+    padding: .25rem .5rem;
+    border: 0;
+    outline: 0;
+    background: #fff;
+    border-radius: 1rem;
+    color: #002240;
+    text-decoration: none; 
+  }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>URL Shrinker</h1>
+    <h1 class="title">URL Shrinker</h1>
+      
     <form action="/shortUrls" method="POST" >
-      <label for="fullUrl">Url</label>
-      <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" >
-      <button class="btn btn-success" type="submit">Shrink</button>
+        <div class="conform">
+          <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" >
+          <button class="btn" type="submit">SHRINK</button>
+        </div>
     </form>
+  </div>
     
-    <table class="table table-striped table-responsive">
+    <table class="table">
       <thead>
         <tr>
           <th>Full URL</th>
@@ -34,5 +199,48 @@
       </tbody>
     </table>
   </div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h1>About</h1>
+        <p class="footer-about-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni aut saepe cupiditate deserunt natus. Itaque nam nihil ullam assumenda sequi, eum consequatur nulla quidem dolor tempora id repellendus? At, sint?</p>
+        <a class="footer-btn" href="">IEEE Newspaper</a>
+      </div>
+      
+      <div class="footer-links">
+        <h1>Quick Links</h1>
+        <ul class="footer-links-ul">
+          <li class="footer-links-li">
+            <a href="#" class="footer-links-a">About Us</a>
+          </li>
+          <li class="footer-links-li">
+            <a href="#" class="footer-links-a">Features</a>
+          </li>
+          <li class="footer-links-li">
+            <a href="#" class="footer-links-a">Books</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-copyrights">
+        <p>| Copyright &copy; 2021 | All Rights Reserved | MSIT Virtual Library |</p>
+      </div>
+      
+      <div class="footer-social-links">
+        <a class="social-a" href="#">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+        <a class="social-a" href="#">
+          <i class="fab fa-facebook fa-2x"></i>
+        </a>
+        <a class="social-a" href="#">
+          <i class="fab fa-instagram fa-2x"></i>
+        </a>
+        <a class="social-a" href="#">
+          <i class="fab fa-twitter fa-2x"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
